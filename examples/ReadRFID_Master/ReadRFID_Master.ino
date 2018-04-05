@@ -1,6 +1,9 @@
 #include "SPI.h"
 #include "MFRC522.h"
-#include <LiquidCrystal.h>
+#include <Wire.h> 
+#include <LiquidCrystal_I2C.h>
+
+LiquidCrystal_I2C lcd(0x27, 20, 4);
 
 #define SS_PIN 10
 #define RST_PIN 9
@@ -15,7 +18,18 @@ void setup()
   Serial.begin(9600);
   SPI.begin();
   rfid.PCD_Init();
-  
+  lcd.begin();
+  lcd.backlight();
+  lcd.setCursor(0, 4);
+  lcd.print("TRUONG DAI HOC"); 
+  lcd.setCursor(1, 4); 
+  lcd.print("SU PHAM KY THUAT");
+  lcd.setCursor(2, 1);
+  lcd.print("He Thong Cho Thue Xe");
+  lcd.setCursor(3, 6);
+  lcd.print("Thong Minh");
+  delay(3000);
+  lcd.clear();
 }
 
 void loop() 
@@ -38,10 +52,7 @@ void loop()
   String strID = "";
   for (byte i = 0; i < 4; i++) 
   {
-    strID +=
-    (rfid.uid.uidByte[i] < 0x10 ? "0" : "") +
-    String(rfid.uid.uidByte[i], HEX) +
-    (i!=3 ? ":" : "");
+    strID += (rfid.uid.uidByte[i] < 0x10 ? "0" : "") + String(rfid.uid.uidByte[i], HEX) + (i!=3 ? ":" : "");
   }
   strID.toUpperCase();
 

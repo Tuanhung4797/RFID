@@ -1,0 +1,15 @@
+C:\Users\KA\AppData\Local\Temporary Projects\HeThongChoThueXe\bin\Debug\HeThongChoThueXe.exe
+C:\Users\KA\AppData\Local\Temporary Projects\HeThongChoThueXe\bin\Debug\HeThongChoThueXe.pdb
+C:\Users\KA\AppData\Local\Temporary Projects\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.Form1.resources
+C:\Users\KA\AppData\Local\Temporary Projects\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.Properties.Resources.resources
+C:\Users\KA\AppData\Local\Temporary Projects\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.csproj.GenerateResource.Cache
+C:\Users\KA\AppData\Local\Temporary Projects\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.exe
+C:\Users\KA\AppData\Local\Temporary Projects\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.pdb
+D:\DATH\AppGiaoTiep\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.exe
+D:\DATH\AppGiaoTiep\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.pdb
+D:\DATH\AppGiaoTiep\HeThongChoThueXe\HeThongChoThueXe\bin\Debug\HeThongChoThueXe.exe
+D:\DATH\AppGiaoTiep\HeThongChoThueXe\HeThongChoThueXe\bin\Debug\HeThongChoThueXe.pdb
+D:\DATH\AppGiaoTiep\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.Form1.resources
+D:\DATH\AppGiaoTiep\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.Properties.Resources.resources
+D:\DATH\AppGiaoTiep\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.csproj.GenerateResource.Cache
+D:\DATH\AppGiaoTiep\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.csprojResolveAssemblyReference.cache

@@ -110,6 +110,9 @@ namespace HeThongChoThueXe
                 count1 = 1;
                 timer1.Start();
                 t1.Text = "0";
+                string tgMx1 = tg.ToString("HH:mm:ss");
+                string sendData = String.Join("borrowX1 TM1 ", tgMx1);
+                serialPort.WriteLine(sendData);
             }
             else if (string.Compare(dataInput, x1t, true) == 0)
             {

@@ -11,11 +11,23 @@ LiquidCrystal_I2C lcd(0x3F, 20, 4);
 #define speak 6
 #define relay1  7
 #define relay2  8
+////////////////// Var of read to serial /////////////////////
+const int MAX_BUF      = 64;
+char buffer[MAX_BUF];
+int sofar;
 
+int moneyX1;
+int moneyX2;
+String timeMx1;
+int timeTx1;
+int timeMx2;
+int timeTx2;
+///////////////////////////////////////
 int i;
 int k;
 bool flag1 = 0;
 bool flag2 = 0;
+bool flagAd = 0;
 bool tapCardX1 = 0;
 bool tapCardX2 = 0;
 
@@ -100,6 +112,32 @@ byte readCards()
       flag2 = 0;
     }
   }
+  else if(checkCard(readCard,admin1))
+  {
+    if(flagAd == 0)
+    {
+      adminUnlock();
+      flagAd = 1;
+    }
+    else if(flagAd == 1)
+    {
+      adminLock();
+      flagAd = 0;
+    }
+  }
+  else if(checkCard(readCard,admin2))
+  {
+    if(flagAd == 0)
+    {
+      adminUnlock();
+      flagAd = 1;
+    }
+    else if(flagAd == 1)
+    {
+      adminLock();
+      flagAd = 0;
+    }
+  }
 }
 void unlockX1()
 {
@@ -107,33 +145,39 @@ void unlockX1()
   {
     case 0:
       digitalWrite(relay1, LOW);
+      readToSerial();
+      lcd.clear();
       lcd.setCursor(0 ,0);
       lcd.print("Xac nhan lay xe so 1");
       lcd.setCursor(0 ,1);
       lcd.print("Gio lay: ");
       lcd.setCursor(10, 1);
-      lcd.print(" ");
+      lcd.print(timeMx1);
       delay(30000);
       digitalWrite(relay1, HIGH);
       lcd.clear();
+      homeLCD();
       break;
     case 1:
       digitalWrite(relay1, LOW);
+      readToSerial();
+      lcd.clear();
       lcd.setCursor(0 ,0);
       lcd.print("Xac nhan tra xe so 1");
       lcd.setCursor(0 ,1);
       lcd.print("Gio lay: ");
       lcd.setCursor(10, 1);
-      lcd.print(" ");
+      lcd.print(timeMx1);
       lcd.setCursor(0, 2);
       lcd.print("Gio tra: ");
       lcd.setCursor(10, 2);
-      lcd.print(" ");
+      lcd.print(timeTx1);
       lcd.setCursor(0, 3);
-      lcd.print("tien");
+      lcd.print(moneyX1);
       delay(30000);
       digitalWrite(relay1, HIGH);
       lcd.clear();
+      homeLCD();
       break;
   }
 }
@@ -143,35 +187,82 @@ void unlockX2()
   {
     case 0:
       digitalWrite(relay2, LOW);
+      readToSerial();
+      lcd.clear();
       lcd.setCursor(0 ,0);
       lcd.print("Xac nhan lay xe so 2");
       lcd.setCursor(0 ,1);
       lcd.print("Gio lay: ");
       lcd.setCursor(10, 1);
-      lcd.print(" ");
+      lcd.print(timeMx2);
       delay(30000);
       digitalWrite(relay2, HIGH);
       lcd.clear();
+      homeLCD();
       break;
     case 1:
       digitalWrite(relay2, LOW);
+      readToSerial();
+      lcd.clear();
       lcd.setCursor(0 ,0);
       lcd.print("Xac nhan tra xe so 2");
       lcd.setCursor(0 ,1);
       lcd.print("Gio lay: ");
       lcd.setCursor(10, 1);
-      lcd.print(" ");
+      lcd.print(timeMx2);
       lcd.setCursor(0, 2);
       lcd.print("Gio tra: ");
       lcd.setCursor(10, 2);
-      lcd.print(" ");
+      lcd.print(timeTx2);
       lcd.setCursor(0, 3);
-      lcd.print("tien");
+      lcd.print(moneyX2);
       delay(30000);
       digitalWrite(relay2, HIGH);
       lcd.clear();
+      homeLCD();
       break;
   }
+}
+void adminUnlock()
+{
+  digitalWrite(relay1, LOW);
+  digitalWrite(relay2, LOW);
+  lcd.clear();
+  lcd.setCursor(7, 0);
+  lcd.print("Admin");
+  lcd.setCursor(7, 2);
+  lcd.print("Unlock");
+}
+void adminLock()
+{
+  digitalWrite(relay1, HIGH);
+  digitalWrite(relay2, HIGH);
+  lcd.clear();
+  lcd.setCursor(8, 0);
+  lcd.print("Admin");
+  lcd.setCursor(8, 2);
+  lcd.print("Lock");
+}
+void speaks(int t, int n)
+{
+  for(int i=0; i<n; i++)
+  {
+    digitalWrite(speak, HIGH);
+    delay(t);
+    digitalWrite(speak, LOW);
+    delay(t);
+  }
+}
+void homeLCD()
+{
+  lcd.setCursor(3, 0);
+  lcd.print("TRUONG DAI HOC"); 
+  lcd.setCursor(2, 1); 
+  lcd.print("SU PHAM KY THUAT");
+  lcd.setCursor(0, 2);
+  lcd.print("He Thong Cho Thue Xe");
+  lcd.setCursor(5, 3);
+  lcd.print("Thong Minh");
 }
 void setup()
 {
@@ -193,11 +284,96 @@ void setup()
   lcd.print("He Thong Cho Thue Xe");
   lcd.setCursor(5, 3);
   lcd.print("Thong Minh");
-  delay(3000);
-  lcd.clear();
 }
+////////////// read to serial /////////////////
+
+void processCommand() {
+  
+  if( !strncmp(buffer,"borrowX1",8))
+  {
+    char *ptr=buffer;
+    while(ptr && ptr<buffer+sofar)
+    {
+      ptr=strchr(ptr,' ')+1;
+      switch(*ptr)
+      {
+        case 'T1M': timeMx1=atof(ptr+1); break;
+        default: ptr=0; break;
+      }
+    }
+    //Robot.moveArm(Base, Shoulder, Elbow, Grip, speed);
+  }
+  else if( !strncmp(buffer,"payX1",5))
+  {
+    char *ptr=buffer;
+    while(ptr && ptr<buffer+sofar)
+    {
+      ptr=strchr(ptr,' ')+1;
+      switch(*ptr)
+      {
+        case 'T1T': timeTx1=atof(ptr+1); break;
+        case 'MN1': moneyX1=atof(ptr+1); break;
+        default: ptr=0; break;
+      }
+    }
+    //Robot.moveArm(Base, Shoulder, Elbow, Grip, speed);
+  }
+  else if( !strncmp(buffer,"borrowX2",8))
+  {
+    char *ptr=buffer;
+    while(ptr && ptr<buffer+sofar)
+    {
+      ptr=strchr(ptr,' ')+1;
+      switch(*ptr)
+      {
+        case 'T2M': timeMx2=atof(ptr+1); break;
+        default: ptr=0; break;
+      }
+    }
+    //Robot.moveArm(Base, Shoulder, Elbow, Grip, speed);
+  }
+  else if( !strncmp(buffer,"payX2",5))
+  {
+    char *ptr=buffer;
+    while(ptr && ptr<buffer+sofar)
+    {
+      ptr=strchr(ptr,' ')+1;
+      switch(*ptr)
+      {
+        case 'T2T': timeTx2=atof(ptr+1); break;
+        case 'MN2': moneyX2=atof(ptr+1); break;
+        default: ptr=0; break;
+      }
+    }
+    //Robot.moveArm(Base, Shoulder, Elbow, Grip, speed);
+  }
+}
+void readToSerial()
+{
+  while(Serial.available() > 0)
+  {
+    buffer[sofar++]=Serial.read();
+    if(buffer[sofar-1]==';') break;  // in case there are multiple instructions
+  }
+  // if we hit a semi-colon, assume end of instruction.
+  if(sofar>0 && buffer[sofar-1]==';')
+  {
+    buffer[sofar]=0;
+    //// echo confirmation
+    //Serial.println(buffer);
+    //// do something with the command
+    processCommand();
+    // reset the buffer
+    sofar=0;
+    //// echo completion
+    //Serial.print(F("> "));
+  }
+}
+//////////////////////////////////////////////
 void loop()
 {
+  //homeLCD();
+
   readCards();
   delayMicroseconds(10);
 }

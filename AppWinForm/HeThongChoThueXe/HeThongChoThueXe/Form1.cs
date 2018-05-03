@@ -110,9 +110,16 @@ namespace HeThongChoThueXe
                 count1 = 1;
                 timer1.Start();
                 t1.Text = "0";
+                string gioX1M = tg.ToString("HH");
+                string phutM1M = tg.ToString("mm");
+                string muonX1 = "borrowX1 ";
+                string space = " ";
+                string end = ";";
                 string tgMx1 = tg.ToString("HH:mm:ss");
-                string sendData = String.Join("borrowX1 TM1 ", tgMx1);
-                serialPort.WriteLine(sendData);
+                string sendData1 = String.Concat(muonX1,"H",gioX1M,space,"M",phutM1M,end);
+                //serialPort.WriteLine(sendData1);
+                serialPort.Write(sendData1);
+                MessageBox.Show(sendData1.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.Compare(dataInput, x1t, true) == 0)
             {
@@ -122,6 +129,12 @@ namespace HeThongChoThueXe
                 timer1.Stop();
                 int tienx1 = count1 * 10000;
                 t1.Text = tienx1.ToString();
+                string tien1 = (tienx1 / 1000).ToString();
+                string traxe1 = "payX1 C";
+                string end = ";";
+                string sendData2 = String.Concat(traxe1, tien1,end);
+                serialPort.Write(sendData2.ToString());
+                MessageBox.Show(sendData2.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else if (string.Compare(dataInput, x2m, true) == 0)

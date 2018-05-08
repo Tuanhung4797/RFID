@@ -17,12 +17,17 @@ char buffer[MAX_BUF];
 int sofar;
 
 unsigned int moneyX1;
-int moneyX2;
+unsigned int moneyX2;
 int gioX1M;
 int phutX1M;
-int timeTx1;
-int timeMx2;
-int timeTx2;
+int gioX1T;
+int phutX1T;
+
+int gioX2M;
+int phutX2M;
+int gioX2T;
+int phutX2T;
+
 ///////////////////////////////////////
 int i;
 int k;
@@ -142,25 +147,89 @@ byte readCards()
     }
   }
 }
-void printLCD()
+void printLCD(int tt)
 {
-  lcd.clear();
-  lcd.setCursor(0 ,0);
-  lcd.print("Xac nhan tra xe so 1");
-  lcd.setCursor(0 ,1);
-  lcd.print("Gio lay: ");
-  lcd.setCursor(9, 1);
-  lcd.print(gioX1M);
-  lcd.setCursor(11 ,1);
-  lcd.print(":");
-  lcd.setCursor(12 ,1);
-  lcd.print(phutX1M);
-//  lcd.setCursor(0, 2);
-//  lcd.print("Gio tra: ");
-//  lcd.setCursor(10, 2);
-//  lcd.print(timeTx1);
-//  lcd.setCursor(0, 3);
-//  lcd.print(tien1);
+  switch(tt)
+  {
+    case(0):
+    {
+      lcd.clear();
+      lcd.setCursor(0 ,0);
+      lcd.print("Xac nhan lay xe so 1");
+      lcd.setCursor(0 ,1);
+      lcd.print("Gio lay: ");
+      lcd.setCursor(9, 1);
+      lcd.print(gioX1M);
+      lcd.setCursor(11 ,1);
+      lcd.print(":");
+      lcd.setCursor(12 ,1);
+      lcd.print(phutX1M);
+    }
+    case(1):
+    {
+      lcd.clear();
+      lcd.setCursor(0 ,0);
+      lcd.print("Xac nhan tra xe so 1");
+      lcd.setCursor(0 ,1);
+      lcd.print("Gio lay: ");
+      lcd.setCursor(9, 1);
+      lcd.print(gioX1M);
+      lcd.setCursor(11 ,1);
+      lcd.print(":");
+      lcd.setCursor(12 ,1);
+      lcd.print(phutX1M);
+      lcd.setCursor(0, 2);
+      lcd.print("Gio tra: ");
+      lcd.setCursor(9, 2);
+      lcd.print(gioX1T);
+      lcd.setCursor(11 ,2);
+      lcd.print(":");
+      lcd.setCursor(12 ,2);
+      lcd.print(phutX1T);
+      lcd.setCursor(0, 3);
+      lcd.print(moneyX1);
+    }
+    case(2):
+    {
+      lcd.clear();
+      lcd.setCursor(0 ,0);
+      lcd.print("Xac nhan lay xe so 2");
+      lcd.setCursor(0 ,1);
+      lcd.print("Gio lay: ");
+      lcd.setCursor(9, 1);
+      lcd.print(gioX2M);
+      lcd.setCursor(11 ,1);
+      lcd.print(":");
+      lcd.setCursor(12 ,1);
+      lcd.print(phutX2M);
+    }
+    case(3):
+    {
+      lcd.clear();
+      lcd.setCursor(0 ,0);
+      lcd.print("Xac nhan tra xe so 2");
+      lcd.setCursor(0 ,1);
+      lcd.print("Gio lay: ");
+      lcd.setCursor(9, 1);
+      lcd.print(gioX2M);
+      lcd.setCursor(11 ,1);
+      lcd.print(":");
+      lcd.setCursor(12 ,1);
+      lcd.print(phutX2M);
+      lcd.setCursor(0, 2);
+      lcd.print("Gio tra: ");
+      lcd.setCursor(9, 2);
+      lcd.print(gioX2T);
+      lcd.setCursor(11 ,2);
+      lcd.print(":");
+      lcd.setCursor(12 ,2);
+      lcd.print(phutX2T);
+      lcd.setCursor(0, 3);
+      lcd.print(moneyX2);
+    }
+  }
+////////////////////////////////
+
 }
 void unlockX1()
 {
@@ -213,13 +282,13 @@ void unlockX2()
     case 0:
       digitalWrite(relay2, LOW);
       //readToSerial();
-      lcd.clear();
-      lcd.setCursor(0 ,0);
-      lcd.print("Xac nhan lay xe so 2");
-      lcd.setCursor(0 ,1);
-      lcd.print("Gio lay: ");
-      lcd.setCursor(10, 1);
-      lcd.print(timeMx2);
+//      lcd.clear();
+//      lcd.setCursor(0 ,0);
+//      lcd.print("Xac nhan lay xe so 2");
+//      lcd.setCursor(0 ,1);
+//      lcd.print("Gio lay: ");
+//      lcd.setCursor(10, 1);
+//      lcd.print(timeMx2);
       delay(30000);
       digitalWrite(relay2, HIGH);
       lcd.clear();
@@ -228,19 +297,19 @@ void unlockX2()
     case 1:
       digitalWrite(relay2, LOW);
       //readToSerial();
-      lcd.clear();
-      lcd.setCursor(0 ,0);
-      lcd.print("Xac nhan tra xe so 2");
-      lcd.setCursor(0 ,1);
-      lcd.print("Gio lay: ");
-      lcd.setCursor(10, 1);
-      lcd.print(timeMx2);
-      lcd.setCursor(0, 2);
-      lcd.print("Gio tra: ");
-      lcd.setCursor(10, 2);
-      lcd.print(timeTx2);
-      lcd.setCursor(0, 3);
-      lcd.print(moneyX2);
+//      lcd.clear();
+//      lcd.setCursor(0 ,0);
+//      lcd.print("Xac nhan tra xe so 2");
+//      lcd.setCursor(0 ,1);
+//      lcd.print("Gio lay: ");
+//      lcd.setCursor(10, 1);
+//      lcd.print(timeMx2);
+//      lcd.setCursor(0, 2);
+//      lcd.print("Gio tra: ");
+//      lcd.setCursor(10, 2);
+//      lcd.print(timeTx2);
+//      lcd.setCursor(0, 3);
+//      lcd.print(moneyX2);
       delay(30000);
       digitalWrite(relay2, HIGH);
       lcd.clear();
@@ -329,8 +398,7 @@ void processCommand() {
       }
     }
     delay(2000);
-    printLCD();
-    //Robot.moveArm(Base, Shoulder, Elbow, Grip, speed);
+    printLCD(0);
   }
   else if( !strncmp(buffer,"payX1",5))
   {
@@ -340,14 +408,14 @@ void processCommand() {
       ptr=strchr(ptr,' ')+1;
       switch(*ptr)
       {
-        case 'B': timeTx1=atof(ptr+1); break;
-        case 'C': moneyX1=atof(ptr+1); break;
+        case 'H': gioX1T=atof(ptr+1); break;
+        case 'M': phutX1T=atof(ptr+1); break;
+        case 'A': moneyX1 =atof(ptr+1); break;
         default: ptr=0; break;
       }
       
     }
-    //Robot.moveArm(Base, Shoulder, Elbow, Grip, speed);
-    printLCD();
+    printLCD(1);
   }
   else if( !strncmp(buffer,"borrowX2",8))
   {
@@ -357,11 +425,12 @@ void processCommand() {
       ptr=strchr(ptr,' ')+1;
       switch(*ptr)
       {
-        case 'D': timeMx2=atof(ptr+1); break;
+        case 'H': gioX2M=atof(ptr+1); break;
+        case 'M': phutX2M=atof(ptr+1); break;
         default: ptr=0; break;
       }
     }
-    //Robot.moveArm(Base, Shoulder, Elbow, Grip, speed);
+    printLCD(2);
   }
   else if( !strncmp(buffer,"payX2",5))
   {
@@ -371,12 +440,13 @@ void processCommand() {
       ptr=strchr(ptr,' ')+1;
       switch(*ptr)
       {
-        case 'E': timeTx2=atof(ptr+1); break;
-        case 'F': moneyX2=atof(ptr+1); break;
+        case 'H': gioX2T=atof(ptr+1); break;
+        case 'M': phutX2T=atof(ptr+1); break;
+        case 'B': moneyX2 =atof(ptr+1); break;
         default: ptr=0; break;
       }
     }
-    //Robot.moveArm(Base, Shoulder, Elbow, Grip, speed);
+    printLCD(3);
   }
 }
 void readToSerial()

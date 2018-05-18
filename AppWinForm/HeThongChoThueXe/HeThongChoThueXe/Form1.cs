@@ -104,8 +104,10 @@ namespace HeThongChoThueXe
             if (string.Compare(dataInput, x1m, true) == 0)
             {
                 tt1.Text = "Đã cho thuê";
+                checkXe1.Checked = true;
                 DateTime tg = DateTime.Now;
                 time1m.Text = tg.ToString("HH:mm:ss");
+                day1m.Text = tg.ToString("dd/M/yyyy");
                 time1t.Text = "..........";
                 count1 = 1;
                 timer1.Start();
@@ -118,13 +120,15 @@ namespace HeThongChoThueXe
                 string tgMx1 = tg.ToString("HH:mm:ss");
                 string sendData1 = String.Concat(muonX1,"H",gioX1M,space,"M",phutX1M,end);
                 serialPort.Write(sendData1);
-                MessageBox.Show(sendData1.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(sendData1.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.Compare(dataInput, x1t, true) == 0)
             {
                 tt1.Text = "Đã trả, đang tại bến";
+                checkXe1.Checked = false;
                 DateTime tg = DateTime.Now;
                 time1t.Text = tg.ToString("HH:mm:ss");
+                day1t.Text = tg.ToString("dd/M/yyyy");
                 timer1.Stop();
                 int tienx1 = count1 * 10000;
                 t1.Text = tienx1.ToString();
@@ -136,14 +140,16 @@ namespace HeThongChoThueXe
                 string end = ";";
                 string sendData2 = String.Concat(traxe1,"H", gioX1T,space, "M", phutX1T, space, "A", tien1, end);
                 serialPort.Write(sendData2.ToString());
-                MessageBox.Show(sendData2.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(sendData2.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else if (string.Compare(dataInput, x2m, true) == 0)
             {
                 tt2.Text = "Đã cho thuê";
+                checkXe2.Checked = true;
                 DateTime tg = DateTime.Now;
                 time2m.Text = tg.ToString("HH:mm:ss");
+                day2m.Text = tg.ToString("dd/M/yyyy");
                 time2t.Text = "..........";
                 count2 = 1;
                 timer2.Start();
@@ -156,13 +162,15 @@ namespace HeThongChoThueXe
                 string tgMx2 = tg.ToString("HH:mm:ss");
                 string sendData3 = String.Concat(muonX2, "H", gioX2M, space, "M", phutX2M, end);
                 serialPort.Write(sendData3);
-                MessageBox.Show(sendData3.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(sendData3.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.Compare(dataInput, x2t, true) == 0)
             {
                 tt2.Text = "Đã trả, đang tại bến";
+                checkXe2.Checked = false;
                 DateTime tg = DateTime.Now;
                 time2t.Text = tg.ToString("HH:mm:ss");
+                day2t.Text = tg.ToString("dd/M/yyyy");
                 timer2.Stop();
                 int tienx2 = count2 * 10000;
                 t2.Text = tienx2.ToString();
@@ -174,7 +182,7 @@ namespace HeThongChoThueXe
                 string end = ";";
                 string sendData4 = String.Concat(traxe2, "H", gioX2T, space, "M", phutX2T, space, "B", tien2, end);
                 serialPort.Write(sendData4.ToString());
-                MessageBox.Show(sendData4.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(sendData4.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -189,6 +197,11 @@ namespace HeThongChoThueXe
         private void timer2_Tick(object sender, EventArgs e)
         {
             count2++;
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
  
 

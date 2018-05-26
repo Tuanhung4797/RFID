@@ -35,6 +35,10 @@
             this.cbxComList = new System.Windows.Forms.ComboBox();
             this.serialPort = new System.IO.Ports.SerialPort(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.day1t = new System.Windows.Forms.Label();
+            this.day1m = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.t1 = new System.Windows.Forms.Label();
             this.time1t = new System.Windows.Forms.Label();
             this.time1m = new System.Windows.Forms.Label();
@@ -48,6 +52,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.day2t = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.day2m = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.t2 = new System.Windows.Forms.Label();
             this.time2t = new System.Windows.Forms.Label();
             this.time2m = new System.Windows.Forms.Label();
@@ -60,6 +68,8 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
@@ -70,27 +80,24 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkXe2 = new System.Windows.Forms.CheckBox();
             this.checkXe1 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.day1m = new System.Windows.Forms.Label();
-            this.day1t = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.day2m = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.day2t = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.cbxComList);
-            this.groupBox1.Location = new System.Drawing.Point(12, 452);
+            this.groupBox1.Location = new System.Drawing.Point(12, 571);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(195, 57);
             this.groupBox1.TabIndex = 0;
@@ -111,7 +118,7 @@
             // cbxComList
             // 
             this.cbxComList.FormattingEnabled = true;
-            this.cbxComList.Location = new System.Drawing.Point(6, 19);
+            this.cbxComList.Location = new System.Drawing.Point(6, 20);
             this.cbxComList.Name = "cbxComList";
             this.cbxComList.Size = new System.Drawing.Size(74, 21);
             this.cbxComList.TabIndex = 0;
@@ -133,12 +140,54 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(12, 109);
+            this.groupBox2.Location = new System.Drawing.Point(12, 181);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(434, 160);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Xe số 1";
+            // 
+            // day1t
+            // 
+            this.day1t.AutoSize = true;
+            this.day1t.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.day1t.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.day1t.Location = new System.Drawing.Point(292, 87);
+            this.day1t.Name = "day1t";
+            this.day1t.Size = new System.Drawing.Size(39, 15);
+            this.day1t.TabIndex = 16;
+            this.day1t.Text = "..........";
+            // 
+            // day1m
+            // 
+            this.day1m.AutoSize = true;
+            this.day1m.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.day1m.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.day1m.Location = new System.Drawing.Point(82, 87);
+            this.day1m.Name = "day1m";
+            this.day1m.Size = new System.Drawing.Size(39, 15);
+            this.day1m.TabIndex = 15;
+            this.day1m.Text = "..........";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(240, 87);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 14;
+            this.label10.Text = "Ngày: ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(26, 88);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Ngày: ";
             // 
             // t1
             // 
@@ -238,7 +287,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(171, 9);
+            this.label1.Location = new System.Drawing.Point(152, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(379, 22);
             this.label1.TabIndex = 3;
@@ -249,17 +298,17 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(198, 44);
+            this.label2.Location = new System.Drawing.Point(223, 67);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(316, 19);
+            this.label2.Size = new System.Drawing.Size(238, 19);
             this.label2.TabIndex = 4;
-            this.label2.Text = "HỆ THỐNG CHO THUÊ XE THÔNG MINH";
+            this.label2.Text = "HỆ THỐNG QUẢN LÝ DỊCH VỤ";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(196, 63);
+            this.label3.Location = new System.Drawing.Point(178, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(318, 16);
             this.label3.TabIndex = 5;
@@ -281,12 +330,54 @@
             this.groupBox3.Controls.Add(this.label19);
             this.groupBox3.Controls.Add(this.label20);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(12, 275);
+            this.groupBox3.Location = new System.Drawing.Point(12, 363);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(434, 158);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Xe số 2";
+            // 
+            // day2t
+            // 
+            this.day2t.AutoSize = true;
+            this.day2t.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.day2t.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.day2t.Location = new System.Drawing.Point(292, 88);
+            this.day2t.Name = "day2t";
+            this.day2t.Size = new System.Drawing.Size(39, 15);
+            this.day2t.TabIndex = 16;
+            this.day2t.Text = "..........";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(240, 85);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(44, 13);
+            this.label15.TabIndex = 15;
+            this.label15.Text = "Ngày: ";
+            // 
+            // day2m
+            // 
+            this.day2m.AutoSize = true;
+            this.day2m.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.day2m.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.day2m.Location = new System.Drawing.Point(82, 86);
+            this.day2m.Name = "day2m";
+            this.day2m.Size = new System.Drawing.Size(39, 15);
+            this.day2m.TabIndex = 14;
+            this.day2m.Text = "..........";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(29, 86);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(44, 13);
+            this.label13.TabIndex = 13;
+            this.label13.Text = "Ngày: ";
             // 
             // t2
             // 
@@ -408,122 +499,23 @@
             this.groupBox4.Controls.Add(this.checkXe1);
             this.groupBox4.Enabled = false;
             this.groupBox4.Font = new System.Drawing.Font("Arial", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(469, 109);
+            this.groupBox4.Location = new System.Drawing.Point(460, 181);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(196, 324);
+            this.groupBox4.Size = new System.Drawing.Size(196, 340);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Trạng thái xe";
             // 
-            // checkBox10
+            // checkBox2
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox10.Location = new System.Drawing.Point(114, 177);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(59, 20);
-            this.checkBox10.TabIndex = 9;
-            this.checkBox10.Text = "Xe 10";
-            this.checkBox10.UseVisualStyleBackColor = true;
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox9.Location = new System.Drawing.Point(114, 151);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(52, 20);
-            this.checkBox9.TabIndex = 8;
-            this.checkBox9.Text = "Xe 9";
-            this.checkBox9.UseVisualStyleBackColor = true;
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox8.Location = new System.Drawing.Point(114, 125);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(52, 20);
-            this.checkBox8.TabIndex = 7;
-            this.checkBox8.Text = "Xe 8";
-            this.checkBox8.UseVisualStyleBackColor = true;
-            // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.Location = new System.Drawing.Point(114, 99);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(52, 20);
-            this.checkBox7.TabIndex = 6;
-            this.checkBox7.Text = "Xe 7";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(114, 72);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(52, 20);
-            this.checkBox6.TabIndex = 5;
-            this.checkBox6.Text = "Xe 6";
-            this.checkBox6.UseVisualStyleBackColor = true;
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(22, 176);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(52, 20);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Xe 5";
-            this.checkBox5.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(22, 150);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(52, 20);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Xe 4";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(22, 124);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(52, 20);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Xe 3";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkXe2
-            // 
-            this.checkXe2.AutoSize = true;
-            this.checkXe2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkXe2.Location = new System.Drawing.Point(22, 98);
-            this.checkXe2.Name = "checkXe2";
-            this.checkXe2.Size = new System.Drawing.Size(52, 20);
-            this.checkXe2.TabIndex = 1;
-            this.checkXe2.Text = "Xe 2";
-            this.checkXe2.UseVisualStyleBackColor = true;
-            // 
-            // checkXe1
-            // 
-            this.checkXe1.AutoSize = true;
-            this.checkXe1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkXe1.Location = new System.Drawing.Point(22, 72);
-            this.checkXe1.Name = "checkXe1";
-            this.checkXe1.Size = new System.Drawing.Size(52, 20);
-            this.checkXe1.TabIndex = 0;
-            this.checkXe1.Text = "Xe 1";
-            this.checkXe1.UseVisualStyleBackColor = true;
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Enabled = false;
+            this.checkBox2.Location = new System.Drawing.Point(99, 51);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(91, 20);
+            this.checkBox2.TabIndex = 11;
+            this.checkBox2.Text = "Chưa thuê";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox1
             // 
@@ -531,113 +523,177 @@
             this.checkBox1.Checked = true;
             this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Enabled = false;
-            this.checkBox1.Location = new System.Drawing.Point(7, 26);
+            this.checkBox1.Location = new System.Drawing.Point(22, 51);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(74, 20);
             this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "Đã thuê";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBox10
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Enabled = false;
-            this.checkBox2.Location = new System.Drawing.Point(101, 26);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(91, 20);
-            this.checkBox2.TabIndex = 11;
-            this.checkBox2.Text = "Chưa thuê";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox10.Location = new System.Drawing.Point(113, 211);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(55, 20);
+            this.checkBox10.TabIndex = 9;
+            this.checkBox10.Text = "Xe 10";
+            this.checkBox10.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // checkBox9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(26, 88);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Ngày: ";
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox9.Location = new System.Drawing.Point(113, 185);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(49, 20);
+            this.checkBox9.TabIndex = 8;
+            this.checkBox9.Text = "Xe 9";
+            this.checkBox9.UseVisualStyleBackColor = true;
             // 
-            // label10
+            // checkBox8
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(240, 87);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
-            this.label10.TabIndex = 14;
-            this.label10.Text = "Ngày: ";
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox8.Location = new System.Drawing.Point(113, 159);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(49, 20);
+            this.checkBox8.TabIndex = 7;
+            this.checkBox8.Text = "Xe 8";
+            this.checkBox8.UseVisualStyleBackColor = true;
             // 
-            // day1m
+            // checkBox7
             // 
-            this.day1m.AutoSize = true;
-            this.day1m.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.day1m.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.day1m.Location = new System.Drawing.Point(82, 87);
-            this.day1m.Name = "day1m";
-            this.day1m.Size = new System.Drawing.Size(39, 15);
-            this.day1m.TabIndex = 15;
-            this.day1m.Text = "..........";
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox7.Location = new System.Drawing.Point(113, 133);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(49, 20);
+            this.checkBox7.TabIndex = 6;
+            this.checkBox7.Text = "Xe 7";
+            this.checkBox7.UseVisualStyleBackColor = true;
             // 
-            // day1t
+            // checkBox6
             // 
-            this.day1t.AutoSize = true;
-            this.day1t.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.day1t.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.day1t.Location = new System.Drawing.Point(292, 87);
-            this.day1t.Name = "day1t";
-            this.day1t.Size = new System.Drawing.Size(39, 15);
-            this.day1t.TabIndex = 16;
-            this.day1t.Text = "..........";
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(113, 106);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(49, 20);
+            this.checkBox6.TabIndex = 5;
+            this.checkBox6.Text = "Xe 6";
+            this.checkBox6.UseVisualStyleBackColor = true;
             // 
-            // label13
+            // checkBox5
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(29, 86);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(44, 13);
-            this.label13.TabIndex = 13;
-            this.label13.Text = "Ngày: ";
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox5.Location = new System.Drawing.Point(22, 211);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(49, 20);
+            this.checkBox5.TabIndex = 4;
+            this.checkBox5.Text = "Xe 5";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // day2m
+            // checkBox4
             // 
-            this.day2m.AutoSize = true;
-            this.day2m.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.day2m.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.day2m.Location = new System.Drawing.Point(82, 86);
-            this.day2m.Name = "day2m";
-            this.day2m.Size = new System.Drawing.Size(39, 15);
-            this.day2m.TabIndex = 14;
-            this.day2m.Text = "..........";
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.Location = new System.Drawing.Point(22, 185);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(49, 20);
+            this.checkBox4.TabIndex = 3;
+            this.checkBox4.Text = "Xe 4";
+            this.checkBox4.UseVisualStyleBackColor = true;
             // 
-            // label15
+            // checkBox3
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(240, 85);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(44, 13);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "Ngày: ";
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Location = new System.Drawing.Point(22, 159);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(49, 20);
+            this.checkBox3.TabIndex = 2;
+            this.checkBox3.Text = "Xe 3";
+            this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // day2t
+            // checkXe2
             // 
-            this.day2t.AutoSize = true;
-            this.day2t.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.day2t.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.day2t.Location = new System.Drawing.Point(292, 88);
-            this.day2t.Name = "day2t";
-            this.day2t.Size = new System.Drawing.Size(39, 15);
-            this.day2t.TabIndex = 16;
-            this.day2t.Text = "..........";
+            this.checkXe2.AutoSize = true;
+            this.checkXe2.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkXe2.Location = new System.Drawing.Point(22, 133);
+            this.checkXe2.Name = "checkXe2";
+            this.checkXe2.Size = new System.Drawing.Size(49, 20);
+            this.checkXe2.TabIndex = 1;
+            this.checkXe2.Text = "Xe 2";
+            this.checkXe2.UseVisualStyleBackColor = true;
+            // 
+            // checkXe1
+            // 
+            this.checkXe1.AutoSize = true;
+            this.checkXe1.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkXe1.Location = new System.Drawing.Point(22, 107);
+            this.checkXe1.Name = "checkXe1";
+            this.checkXe1.Size = new System.Drawing.Size(49, 20);
+            this.checkXe1.TabIndex = 0;
+            this.checkXe1.Text = "Xe 1";
+            this.checkXe1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::HeThongChoThueXe.Properties.Resources.SPKT;
+            this.pictureBox1.Location = new System.Drawing.Point(18, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::HeThongChoThueXe.Properties.Resources.IRC;
+            this.pictureBox2.Location = new System.Drawing.Point(559, 23);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(145, 96);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(396, 19);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "CHO THUÊ PHƯƠNG TIỆN CÁ NHÂN THÔNG MINH";
+            // 
+            // timer3
+            // 
+            this.timer3.Enabled = true;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(349, 141);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 11;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(688, 526);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(678, 652);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label3);
@@ -649,7 +705,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Quản lý thuê xe";
+            this.Text = "HỆ THỐNG QUẢ LÝ CHO THUÊ PHƯƠNG TIỆN CÁ NHÂN THÔNG MINH";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
@@ -659,6 +715,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -696,16 +754,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.CheckBox checkBox10;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox7;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkXe2;
-        private System.Windows.Forms.CheckBox checkXe1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label day1t;
@@ -716,6 +764,21 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label day2m;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkXe2;
+        private System.Windows.Forms.CheckBox checkXe1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 

@@ -37,9 +37,7 @@ namespace HeThongChoThueXe
             foreach (int ComNumber in ComNumberList)
             {
                 cbxComList.Items.Add("COM" + ComNumber.ToString());
-            }
-
-            
+            }         
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -109,6 +107,7 @@ namespace HeThongChoThueXe
                 time1m.Text = tg.ToString("HH:mm:ss");
                 day1m.Text = tg.ToString("dd/M/yyyy");
                 time1t.Text = "..........";
+                day1t.Text = "..........";
                 count1 = 1;
                 timer1.Start();
                 t1.Text = "0";
@@ -151,6 +150,7 @@ namespace HeThongChoThueXe
                 time2m.Text = tg.ToString("HH:mm:ss");
                 day2m.Text = tg.ToString("dd/M/yyyy");
                 time2t.Text = "..........";
+                day2t.Text = "..........";
                 count2 = 1;
                 timer2.Start();
                 t2.Text = "0";
@@ -202,6 +202,25 @@ namespace HeThongChoThueXe
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            string[] ComList = SerialPort.GetPortNames();
+
+            int[] ComNumberList = new int[ComList.Length];
+            for (int i = 0; i < ComList.Length; i++)
+            {
+                ComNumberList[i] = int.Parse(ComList[i].Substring(3));
+            }
+
+            Array.Sort(ComNumberList);
+            foreach (int ComNumber in ComNumberList)
+            {
+                cbxComList.Items.Add("COM" + ComNumber.ToString());
+                timer3.Stop();
+            }
+            
         }
  
 

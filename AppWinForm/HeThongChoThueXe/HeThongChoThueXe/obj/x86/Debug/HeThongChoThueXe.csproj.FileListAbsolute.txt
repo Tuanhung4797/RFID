@@ -17,7 +17,7 @@ D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThu
 D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.pdb
 D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThueXe\bin\Debug\HeThongChoThueXe.exe
 D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThueXe\bin\Debug\HeThongChoThueXe.pdb
-D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.csprojResolveAssemblyReference.cache
 D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.Form1.resources
 D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.Properties.Resources.resources
 D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.csproj.GenerateResource.Cache
+D:\DATH\Code_GitHub\Smart-bike-station\AppWinForm\HeThongChoThueXe\HeThongChoThueXe\obj\x86\Debug\HeThongChoThueXe.csprojResolveAssemblyReference.cache

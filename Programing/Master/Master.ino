@@ -13,9 +13,9 @@ LiquidCrystal_I2C lcd(0x3F, 20, 4);
 #define relay1  8
 #define relay2  7
 ////////////////// Var of read to serial /////////////////////
-const int MAX_BUF      = 64;
-char buffer[MAX_BUF];
-int sofar;
+//const int MAX_BUF      = 64;
+//char buffer[MAX_BUF];
+//int sofar;
 
 unsigned int moneyX1;
 unsigned int moneyX2;
@@ -142,6 +142,7 @@ byte readCards()
   }
   else if(checkCard(readCard,admin2))
   {
+    speaks(100, 1);
     if(flagAd == 0)
     {
       adminUnlock();
@@ -286,6 +287,8 @@ void adminUnlock()
   lcd.print("Admin");
   lcd.setCursor(7, 2);
   lcd.print("Unlock");
+  delay(2000);
+  homeLCD();
 }
 void adminLock()
 {
@@ -296,6 +299,8 @@ void adminLock()
   lcd.print("Admin");
   lcd.setCursor(8, 2);
   lcd.print("Lock");
+  delay(2000);
+  homeLCD();
 }
 void speaks(int t, int n)
 {

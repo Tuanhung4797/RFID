@@ -111,15 +111,6 @@ namespace HeThongChoThueXe
                 count1 = 1;
                 timer1.Start();
                 t1.Text = "0";
-                string gioX1M = tg.ToString("HH");
-                string phutX1M = tg.ToString("mm");
-                string muonX1 = "borrowX1 ";
-                string space = " ";
-                string end = ";";
-                string tgMx1 = tg.ToString("HH:mm:ss");
-                string sendData1 = String.Concat(muonX1,"H",gioX1M,space,"M",phutX1M,end);
-                serialPort.Write(sendData1);
-                //MessageBox.Show(sendData1.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.Compare(dataInput, x1t, true) == 0)
             {
@@ -131,16 +122,6 @@ namespace HeThongChoThueXe
                 timer1.Stop();
                 int tienx1 = count1 * 10000;
                 t1.Text = tienx1.ToString();
-                string gioX1T = tg.ToString("HH");
-                string phutX1T = tg.ToString("mm");
-                string space = " ";
-                string tien1 = (tienx1 / 1000).ToString();
-                string traxe1 = "payX1 ";
-                string end = ";";
-                string sendData2 = String.Concat(traxe1,"H", gioX1T,space, "M", phutX1T, space, "A", tien1, end);
-                serialPort.Write(sendData2.ToString());
-                //MessageBox.Show(sendData2.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
             }
             else if (string.Compare(dataInput, x2m, true) == 0)
             {
@@ -154,15 +135,6 @@ namespace HeThongChoThueXe
                 count2 = 1;
                 timer2.Start();
                 t2.Text = "0";
-                string gioX2M = tg.ToString("HH");
-                string phutX2M = tg.ToString("mm");
-                string muonX2 = "borrowX2 ";
-                string space = " ";
-                string end = ";";
-                string tgMx2 = tg.ToString("HH:mm:ss");
-                string sendData3 = String.Concat(muonX2, "H", gioX2M, space, "M", phutX2M, end);
-                serialPort.Write(sendData3);
-                //MessageBox.Show(sendData3.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (string.Compare(dataInput, x2t, true) == 0)
             {
@@ -174,15 +146,6 @@ namespace HeThongChoThueXe
                 timer2.Stop();
                 int tienx2 = count2 * 10000;
                 t2.Text = tienx2.ToString();
-                string gioX2T = tg.ToString("HH");
-                string phutX2T = tg.ToString("mm");
-                string space = " ";
-                string tien2 = (tienx2 / 1000).ToString();
-                string traxe2 = "payX2 ";
-                string end = ";";
-                string sendData4 = String.Concat(traxe2, "H", gioX2T, space, "M", phutX2T, space, "B", tien2, end);
-                serialPort.Write(sendData4.ToString());
-                //MessageBox.Show(sendData4.ToString(), "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -220,9 +183,6 @@ namespace HeThongChoThueXe
                 cbxComList.Items.Add("COM" + ComNumber.ToString());
                 timer3.Stop();
             }
-            
         }
- 
-
     }
 }

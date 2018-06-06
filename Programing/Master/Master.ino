@@ -1,4 +1,3 @@
-
 #include "SPI.h"
 #include "MFRC522.h"
 #include <Wire.h> 
@@ -12,23 +11,6 @@ LiquidCrystal_I2C lcd(0x3F, 20, 4);
 #define speak 6
 #define relay1  8
 #define relay2  7
-////////////////// Var of read to serial /////////////////////
-//const int MAX_BUF      = 64;
-//char buffer[MAX_BUF];
-//int sofar;
-
-unsigned int moneyX1;
-unsigned int moneyX2;
-
-int gioX1M;
-int phutX1M;
-int gioX1T;
-int phutX1T;
-
-int gioX2M;
-int phutX2M;
-int gioX2T;
-int phutX2T;
 
 ///////////////////////////////////////
 int i;
